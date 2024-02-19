@@ -6,7 +6,7 @@ package project;
 
 /**
  *
- * @author Taranpreet Singh
+ * @author Taranpreet Singh.
  */
 
 
