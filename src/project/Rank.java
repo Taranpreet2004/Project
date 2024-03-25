@@ -6,7 +6,7 @@ package project;
 
 /**
  *
- * @author admin
+ * @author Taranpreet Singh
  */
 public class Rank {
     
