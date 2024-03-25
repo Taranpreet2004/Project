@@ -9,15 +9,7 @@ package project;
  * @author Taranpreet Singh.
  */
 
-
 import java.util.ArrayList;
-import java.util.Scanner;
-import project.Game;
-import project.GoFishPlayer;
-import project.GoFishPlayer.GoFishGame;
-import project.GroupOfCards;
-import project.Player.Card;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -30,7 +22,7 @@ public class Main {
         GroupOfCards groupOfCards = new GroupOfCards(cards);
 
         // Create game
-        Game game = new GoFishGame("Go Fish", player1, player2, groupOfCards);
+        Game game = new Game("Go Fish", player1, player2, groupOfCards);
 
         // Play game
         game.play();
@@ -44,24 +36,6 @@ public class Main {
             super(name);
         }
 
-        @Override
-        public void turn(Scanner scanner, Deck deck, ArrayList<GoFishPlayer> players) {
-            // Implement the turn logic for the Go Fish game
-        }
-
-        @Override
-        public boolean hasWon() {
-            // Implement the winning condition for the Go Fish game
-            return false;
-        }
-
-        @Override
-        public int getScore() {
-            // Implement the scoring mechanism for the Go Fish game
-            return 0;
-        }
+        // Implement overridden methods if needed
     }
 }
-
-
-    

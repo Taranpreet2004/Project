@@ -10,6 +10,7 @@ package project;
  */
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class GroupOfCards {
 
@@ -25,6 +26,24 @@ public class GroupOfCards {
 
     public int getSize() {
         return cards.size();
+    }
+
+    // Method to shuffle the cards in the group
+    public void shuffle() {
+        Collections.shuffle(cards);
+    }
+
+    // Method to deal a specific number of cards from the group
+    public ArrayList<Card> deal(int numCards) {
+        ArrayList<Card> dealtCards = new ArrayList<>();
+        for (int i = 0; i < numCards; i++) {
+            if (!cards.isEmpty()) {
+                dealtCards.add(cards.remove(0));
+            } else {
+                break; // Stop dealing if there are no more cards
+            }
+        }
+        return dealtCards;
     }
 
     @Override

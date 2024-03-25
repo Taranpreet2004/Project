@@ -40,7 +40,7 @@ public abstract class GoFishPlayer extends Player {
         score++; // Increment the score when a book is added
     }
 
-    // Method to check if the player has won the game (by collecting all 13 books)
+    // Method to check if the player has won the game (by collecting all books)
     @Override
     public boolean hasWon() {
         return getScore() == 13;
@@ -53,60 +53,38 @@ public abstract class GoFishPlayer extends Player {
     }
 
     // Method to get all cards of a specific rank from the player's hand
-    public ArrayList<Card> getRank(int rank) {
-        ArrayList<Card> cards = new ArrayList<>();
-        for (Card card : hand) {
-            if (card.getRank() != null && rank == card.getRank().getValue()) {
-                cards.add(card);
-            } else {
-            }
+    // Method to get all cards of a specific rank from the player's hand
+// Method to get all cards of a specific rank from the player's hand
+// Method to get all cards of a specific rank from the player's hand
+public ArrayList<Card> getRank(int rankValue) {
+    ArrayList<Card> cardsOfRank = new ArrayList<>();
+    for (Card card : hand) {
+        if (card.getRank() != null && card.getRank().ordinal() + 1 == rankValue) {
+            cardsOfRank.add(card);
         }
-        return cards;
     }
+    return cardsOfRank;
+}
+
+
+
 
     // Method to check if the player has any cards of a specific rank in their hand
-    public boolean hasRank(int rank) {
-        for (Card card : hand) {
-            if (card.getRank() != null && card.getRank().getValue() == rank) {
-                return true;
-            }
+   // Method to check if the player has any cards of a specific rank in their hand
+public boolean hasRank(int rankValue) {
+    for (Card card : hand) {
+        if (card.getRank() != null && card.getRank().ordinal() + 1 == rankValue) {
+            return true;
         }
-        return false;
     }
+    return false;
+}
 
     // Method to get a copy of the player's current hand (to prevent direct manipulation)
     public ArrayList<Card> getHand() {
         return new ArrayList<>(hand);
     }
-    
-    public class GoFishGame extends Game {
-    private final GoFishPlayer player1;
-    private final GoFishPlayer player2;
-    private final GroupOfCards groupOfCards;
 
-    public GoFishGame(String name, GoFishPlayer player1, GoFishPlayer player2, GroupOfCards groupOfCards) {
-        super(name);
-        this.player1 = player1;
-        this.player2 = player2;
-        this.groupOfCards = groupOfCards;
-    }
+    // Other methods in the class...
 
-    @Override
-    public void play() {
-        // Implement the game logic for Go Fish
-    }
-
-    @Override
-    public void declareWinner() {
-        // Implement the method to declare the winner of the game
-    }
-}
-
-    void declareWinner() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    void play() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

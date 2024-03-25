@@ -15,14 +15,11 @@ package project;
  */
 
 
-import java.util.Objects;
-
-public class Card implements Comparable<Card> {
-
+public class Card {
     private final Rank rank;
-    private final Suit suit;
+    private final String suit; // Representing the "suit" as a String
 
-    public Card(Rank rank, Suit suit) {
+    public Card(Rank rank, String suit) {
         this.rank = rank;
         this.suit = suit;
     }
@@ -31,65 +28,12 @@ public class Card implements Comparable<Card> {
         return rank;
     }
 
-    public Suit getSuit() {
+    public String getSuit() {
         return suit;
     }
 
     @Override
     public String toString() {
-        return rank.getValue() + " of " + suit.getName();
-    }
-
-    @Override
-    public int compareTo(Card other) {
-        return this.rank.compareTo(other.rank);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        Card card = (Card) obj;
-        return Objects.equals(rank, card.rank) && Objects.equals(suit, card.suit);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(rank, suit);
-    }
-
-    public static class Rank implements Comparable<Rank> {
-
-        private final int value;
-
-        public Rank(int value) {
-            this.value = value;
-        }
-
-        public int getValue() {
-            return value;
-        }
-
-        @Override
-        public int compareTo(Rank other) {
-            return Integer.compare(this.value, other.value);
-        }
-    }
-
-    public static class Suit {
-
-        private final String name;
-
-        public Suit(String name) {
-            this.name = name;
-        }
-
-        public String getName() {
-            return name;
-        }
+        return rank + " of " + suit;
     }
 }
