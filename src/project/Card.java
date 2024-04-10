@@ -17,9 +17,9 @@ package project;
 
 public class Card {
     private final Rank rank;
-    private final String suit; // Representing the "suit" as a String
+    private final Suit suit; // Representing the "suit" as a String
 
-    public Card(Rank rank, String suit) {
+    public Card(Rank rank, Suit suit) {
         this.rank = rank;
         this.suit = suit;
     }
@@ -28,7 +28,7 @@ public class Card {
         return rank;
     }
 
-    public String getSuit() {
+    public Suit getSuit() {
         return suit;
     }
 

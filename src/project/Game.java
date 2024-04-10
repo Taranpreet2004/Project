@@ -65,4 +65,3 @@ public abstract class Game {
         return promptPlayerToAsk(currentPlayer, players);
     }
 }
-

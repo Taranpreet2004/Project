@@ -19,10 +19,13 @@ public class Main {
 
         // Create group of cards
         ArrayList<Card> cards = new ArrayList<>();
+        for (int i = 0; i < 52; i++) {
+            cards.add(new Card(Rank.values()[i % 13], Suit.values()[i / 13]));
+        }
         GroupOfCards groupOfCards = new GroupOfCards(cards);
 
         // Create game
-        Game game = new Game("Go Fish", player1, player2, groupOfCards);
+        Game game = new GoFishGame("Go Fish", player1, player2, groupOfCards);
 
         // Play game
         game.play();

@@ -53,32 +53,25 @@ public abstract class GoFishPlayer extends Player {
     }
 
     // Method to get all cards of a specific rank from the player's hand
-    // Method to get all cards of a specific rank from the player's hand
-// Method to get all cards of a specific rank from the player's hand
-// Method to get all cards of a specific rank from the player's hand
-public ArrayList<Card> getRank(int rankValue) {
-    ArrayList<Card> cardsOfRank = new ArrayList<>();
-    for (Card card : hand) {
-        if (card.getRank() != null && card.getRank().ordinal() + 1 == rankValue) {
-            cardsOfRank.add(card);
+    public ArrayList<Card> getRank(int rankValue) {
+        ArrayList<Card> cardsOfRank = new ArrayList<>();
+        for (Card card : hand) {
+            if (card.getRank() != null && card.getRank().ordinal() + 1 == rankValue) {
+                cardsOfRank.add(card);
+            }
         }
+        return cardsOfRank;
     }
-    return cardsOfRank;
-}
-
-
-
 
     // Method to check if the player has any cards of a specific rank in their hand
-   // Method to check if the player has any cards of a specific rank in their hand
-public boolean hasRank(int rankValue) {
-    for (Card card : hand) {
-        if (card.getRank() != null && card.getRank().ordinal() + 1 == rankValue) {
-            return true;
+    public boolean hasRank(int rankValue) {
+        for (Card card : hand) {
+            if (card.getRank() != null && card.getRank().ordinal() + 1 == rankValue) {
+                return true;
+            }
         }
+        return false;
     }
-    return false;
-}
 
     // Method to get a copy of the player's current hand (to prevent direct manipulation)
     public ArrayList<Card> getHand() {
@@ -86,5 +79,4 @@ public boolean hasRank(int rankValue) {
     }
 
     // Other methods in the class...
-
 }
